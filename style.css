@@ -15,6 +15,7 @@ body {
 	width: 550px;
 	position: relative;
 	margin-bottom: 20px;
+	text-align: center;
 }
 .range-slider-container {
 	width: 550px;
