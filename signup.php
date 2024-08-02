@@ -11,19 +11,19 @@
 			$pass = md5($password);
 			$query = "insert into users (user_level, user_name, password) values (1, '$user_name', '$pass')";
 			mysqli_query($con, $query);
-            $getuser = "select * from users where user_name = '$user_name'";
-            $resuser = mysqli_query($con, $getuser);
-            $rowuser = mysqli_fetch_assoc($resuser);
-            $query = "select * from defaultquestions";
-            $res = mysqli_query($con, $query);
-            while ($row = mysqli_fetch_assoc($res)) {
-                $insertquery = "insert into usersquestions (userid,lefttext,righttext,questiontype,value1,value2,value3,value4,value5," .
-                                "value6,value7,value8,value9,value10) values (".$rowuser['ID'].",'".$row['LeftText']."','".$row['RightText'] .
-                                "',".$row['QuestionType'].",".$row['Value1'].",".$row['Value2'].",".$row['Value3'].",".$row['Value4']."," .
-                                $row['Value5'].",".$row['Value6'].",".$row['Value7'].",".$row['Value8'].",".$row['Value9']."," .
-                                $row['Value10'].")";
-                mysqli_query($con, $insertquery);
-            }
+			$getuser = "select * from users where user_name = '$user_name'";
+			$resuser = mysqli_query($con, $getuser);
+			$rowuser = mysqli_fetch_assoc($resuser);
+			$query = "select * from defaultquestions";
+			$res = mysqli_query($con, $query);
+			while ($row = mysqli_fetch_assoc($res)) {
+				$insertquery = "insert into usersquestions (userid,lefttext,righttext,questiontype,value1,value2,value3,value4,value5," .
+                            "value6,value7,value8,value9,value10) values (".$rowuser['ID'].",'".$row['LeftText']."','".$row['RightText'] .
+                            "',".$row['QuestionType'].",".$row['Value1'].",".$row['Value2'].",".$row['Value3'].",".$row['Value4']."," .
+                            $row['Value5'].",".$row['Value6'].",".$row['Value7'].",".$row['Value8'].",".$row['Value9']."," .
+                            $row['Value10'].")";
+				mysqli_query($con, $insertquery);
+			}
 			header("Location: login.php");
 			die;
 		}
