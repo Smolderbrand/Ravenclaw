@@ -12,13 +12,11 @@ body {
 	background-color: #fff;
 }
 .margin-container {
-	width: 550px;
 	position: relative;
 	margin-bottom: 20px;
 	text-align: center;
 }
 .range-slider-container {
-	width: 550px;
 	position: relative;
 	outline: 1px solid gray;
 }
